@@ -1,0 +1,34 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMzMzU1NTV9.aZuzym0mEmipUpuwbuOiKo68Lyiqy9uXVsSDCYykzw0
+
+###
+#Users Index
+GET http://localhost:3000/users
+
+###
+#Users Create
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Yujin",
+  "email": "yujin@gmail.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+###
+#Users Show
+GET http://localhost:3000/users/2
+Authorization: Bearer {{ jwt }}
+
+###
+#Sessions Create (Log In)
+
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "yuna@gmail.com",
+  "password": "password"
+}
